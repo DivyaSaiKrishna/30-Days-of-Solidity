@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+
+contract Calculation{
+
+    function CalAddition(uint C, uint D) pure public returns(uint){
+        return C+D;
+    }
+
+    function CalSubtraction(uint A, uint B) pure public returns(uint){
+            return (B>A) ?  (B-A) : (A-B);
+    }
+
+    function CalMultiplication(uint E, uint F) pure public returns(uint){
+        return E*F;
+    }
+
+    function CalDivison(uint Q, uint R) pure public returns(uint){
+        return (R > Q) ? R/Q : Q/R;
+    }
+
+
+
+}
