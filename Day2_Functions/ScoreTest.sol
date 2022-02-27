@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 import "remix_tests.sol"; // this import is automatically injected by Remix.
-import "../contracts/setandget.sol";
+import "../contracts/ScoreSetGet..sol";
 
 contract ScoreTest{
     Score sc = new Score();
