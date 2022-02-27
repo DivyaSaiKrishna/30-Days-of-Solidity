@@ -9,27 +9,23 @@ Practice Solidity with Remix Compiler and CheatSheet
 
 - ## Day1
   - [Version](#Version)  
-     <a name="Version"/>
   - [Variables](#Variables)
-    <a name="Variables"/>
   - [Data Types](#DataTypes)
-    <a name="DataTypes"/>
+    
 - ## Day 2
   - [Contracts](#Contracts)  
-    <a name="Contracts"/> 
   - [Functions](#Functions)  
-    <a name="Functions"/>
   - [Function Calls/Returns](#FunctionCalls/Returns)  
-    <a name="FunctionCalls/Returns"/>
-   - [Function Visibility](#FunctionVisibility)  
-    <a name="FunctionVisibility"/>
+  - [Function Visibility](#FunctionVisibility)  
+    
 
 
 ## Version
+<a name="Version"/>
 pragma solidity >=0.7.0 <0.9.0; will compile version >=0.7.0 <0.9.0.
 
 ## Variables
-
+<a name="Variables"/>
 There are 3 types of variables in Solidity
 
 - local
@@ -43,6 +39,8 @@ stored on the blockchain
 - global (provides information about the blockchain)
 
 ## Data Types
+<a name="DataTypes"/>
+
 - #### Boolean (True / False)
    - Declaration : bool isBool;
 
@@ -76,6 +74,8 @@ stored on the blockchain
    ```
  
 ## Contracts
+<a name="Contracts"/> 
+
   - Contracts in Solidity are similar to classes in object-oriented languages.
     - Example :  
       ```
@@ -85,6 +85,8 @@ stored on the blockchain
        ```
  
 ## Functions
+<a name="Functions"/>
+    
   - Functions can be defined inside and outside of contracts.
     - Example :
       ```
@@ -95,9 +97,10 @@ stored on the blockchain
           }
        }
         ```
-     - 
         
 ## Function Calls/Returns
+<a name="FunctionCalls/Returns"/>
+
  - Functions outside of a contract, also called “free functions”.
    - Example :
       ```
@@ -114,7 +117,9 @@ stored on the blockchain
         }
       ```
 ## Function Visibility
-- Solidity knows two kinds of function calls: external ones that do create an actual EVM(Ethereum Virtual Machine) message call and internal ones that do not. Furthermore, internal functions can be made inaccessible to derived contracts. This gives rise to four types of visibility for functions.
+<a name="FunctionVisibility"/>
+
+- Solidity knows two kinds of function calls: external ones that do create an actual EVM(Ethereum Virtual Machine) message call and internal ones that do not.            Furthermore, internal functions can be made inaccessible to derived contracts. This gives rise to four types of visibility for functions.
   - external : External functions are part of the contract interface, which means they can be called from other contracts and via transactions.
   - public : Public functions are part of the contract interface and can be either called internally or via message calls.
   - internal : Internal functions can only be accessed from within the current contract or contracts deriving from it.
