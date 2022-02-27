@@ -1,45 +1,121 @@
 # 30-Days-of-Solidity
+30 days of Solidity programming challenge is a step-by-step guide to learn Solidity programming language in 30 days.
+
 Practice Solidity with Remix Compiler and CheatSheet 
 
 <h2> Solidity Cheatsheet </h2>
-<h2> Table of Contents </h2> 
 
-[Version](#Version)  
-<a name="Version"/>
+<h3> Table of Contents </h3> 
 
-[Variables](#Variables)
-<a name="Variables"/>
-
-[Data Types](#DataTypes)
-<a name="DataTypes"/>
+- ## Day1
+  - [Version](#Version)  
+     <a name="Version"/>
+  - [Variables](#Variables)
+    <a name="Variables"/>
+  - [Data Types](#DataTypes)
+    <a name="DataTypes"/>
+- ## Day 2
+  - [Contracts](#Contracts)  
+    <a name="Contracts"/> 
+  - [Functions](#Functions)  
+    <a name="Functions"/>
+  - [Function Calls/Returns](#FunctionCalls/Returns)  
+    <a name="FunctionCalls/Returns"/>
+   - [Function Visibility](#FunctionVisibility)  
+    <a name="FunctionVisibility"/>
 
 
 ## Version
-pragma solidity >=0.7.0 <0.9.0; will compile vesrion >=0.7.0 <0.9.0.
+pragma solidity >=0.7.0 <0.9.0; will compile version >=0.7.0 <0.9.0.
 
 ## Variables
 
 There are 3 types of variables in Solidity
 
-local
+- local
 declared inside a function
 not stored on the blockchain
 
-state
+- state
 declared outside a function
 stored on the blockchain
 
-global (provides information about the blockchain)
+- global (provides information about the blockchain)
 
 ## Data Types
-Boolean (True / False)
+- #### Boolean (True / False)
+   - Declaration : bool isBool;
 
-Declaration : bool isBool;
+- #### Byte32 : Bytes are used to store a fixed-sized character set 
+   - Declaration : bytes32 name;
 
-Byte32 : Bytes are used to store a fixed-sized character set 
+- #### uint (used to store signed and unsigned integers respectively)
+   - Declaration : uint address;
 
-Declaration : bytes32 name;
+- #### Address : Holds a 20 byte value (size of an Ethereum address)
+  - Declaration : address myAddress = 0x123;
 
-uint (used to store signed and unsigned integers respectively)
+- #### String : string is used to store the character set equal to or more than a byte.
+  - Declaration : string myString = 'Solidity';
+ 
+- #### Enum :  user-defined data types.
+  - Declaration :  enum my_enum { sol , idi , ty }  
 
-Declaration : uint address;
+- #### Struct Type : Structs are custom defined types that can group several variables
+  - Declaration :
+   ``` 
+   pragma solidity ^0.4.0;
+   contract Ballot {
+    struct Voter { // Struct
+        uint weight;
+        bool voted;
+        address delegate;
+        uint vote;
+     }
+   }
+   ```
+ 
+## Contracts
+  - Contracts in Solidity are similar to classes in object-oriented languages.
+    - Example :  
+      ```
+      pragma solidity ^0.4.0;
+      contract HelloWorld {
+      } 
+       ```
+ 
+## Functions
+  - Functions can be defined inside and outside of contracts.
+    - Example :
+      ```
+      pragma solidity ^0.4.0;
+      contract Calculation{
+          function add(uint A, uint B) public{
+            uint sum = A+B;
+          }
+       }
+        ```
+     - 
+        
+## Function Calls/Returns
+ - Functions outside of a contract, also called “free functions”.
+   - Example :
+      ```
+        pragma solidity ^0.4.0;
+        //return uint of subtraction
+        function sub(uint A, uint B) public returns(uint){
+          return B>A ? (B-A) : (A-B);
+        }
+        contract Calculation{
+          function add(uint A, uint B) public{
+            uint sum = A+B;
+            uint dif = sub(10,3);
+          }
+        }
+      ```
+## Function Visibility
+- Solidity knows two kinds of function calls: external ones that do create an actual EVM(Ethereum Virtual Machine) message call and internal ones that do not. Furthermore, internal functions can be made inaccessible to derived contracts. This gives rise to four types of visibility for functions.
+  - external : External functions are part of the contract interface, which means they can be called from other contracts and via transactions.
+  - public : Public functions are part of the contract interface and can be either called internally or via message calls.
+  - internal : Internal functions can only be accessed from within the current contract or contracts deriving from it.
+  - private : Private functions are like internal ones but they are not visible in derived contracts.
