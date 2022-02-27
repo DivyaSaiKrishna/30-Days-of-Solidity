@@ -4,11 +4,11 @@ contract Score {
  
     uint score = 5;
     
-    function getMessage() view public  returns(uint) {
+    function getScore() view public  returns(uint) {
         return score;
     }
     
-    function setMessage(uint newMessage) public {
-        score = newMessage;
+    function setScore(uint newScore) public {
+        score = newScore;
     }
 }
