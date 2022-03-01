@@ -17,6 +17,10 @@ Practice Solidity with Remix Compiler and CheatSheet
   - [Functions](#Functions)  
   - [Function Calls/Returns](#FunctionCalls/Returns)  
   - [Function Visibility](#FunctionVisibility)  
+
+- ## Day 3
+  - [Memory vs Storage](#MemoryvsStorage)
+    
     
 
 
@@ -124,3 +128,7 @@ stored on the blockchain
   - public : Public functions are part of the contract interface and can be either called internally or via message calls.
   - internal : Internal functions can only be accessed from within the current contract or contracts deriving from it.
   - private : Private functions are like internal ones but they are not visible in derived contracts.
+
+## Memory VS Storage
+<a name="MemoryvsStorage"/>
+  - 
