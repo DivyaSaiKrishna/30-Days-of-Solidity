@@ -20,6 +20,14 @@ Practice Solidity with Remix Compiler and CheatSheet
 
 - ## Day 3
   - [Memory vs Storage](#MemoryvsStorage)
+  - [Arrays](#Arrays)
+  
+- ## Day 4
+  - [Keccak256](#Keccak256)
+  - [Web3.js](#Web3.js)  
+  
+- ## Day 5
+  - [Mapping](#Mapping) 
     
     
 
@@ -131,4 +139,31 @@ stored on the blockchain
 
 ## Memory VS Storage
 <a name="MemoryvsStorage"/>
-  - 
+
+## Arrays
+<a name="Arrays"/>
+
+## Keccak256
+<a name="Keccak256"/>
+- Ethereum has the hash function keccak256 built in, which is a version of SHA3. A hash function basically maps an input into a random 256-bit hexadecimal number. A slight change in the input will cause a large change in the hash.
+It's useful for many purposes in Ethereum, but for right now we're just going to use it for pseudo-random number generation.
+Also important, keccak256 expects a single parameter of type bytes. This means that we have to "pack" any parameters before calling keccak256:
+
+
+```
+  keccak256(abi.encodePacked("aaaab"));
+```
+
+## Web3.js
+<a name="Web3.js"/>
+
+## Mapping
+<a name="Mapping"/>
+- Maps are created with the syntax mapping(keyType => valueType).
+  keyType can be value types such as uint, address or bytes.
+  valueType can be any type including another mapping or an array.
+  Mappings are not iterable.
+  
+  ```
+  mapping(address => uint) public myMap;
+  ```
