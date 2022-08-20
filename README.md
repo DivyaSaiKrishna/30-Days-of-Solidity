@@ -1,7 +1,13 @@
 # 30-Days-of-Solidity
 30 days of Solidity programming challenge is a step-by-step guide to learn Solidity programming language in 30 days.
-
+<h4>-####-Inprogress-####-<h4>
 Practice Solidity with Remix Compiler and CheatSheet 
+
+I learning from these resouces
+
+- Souces:
+  - https://docs.soliditylang.org/
+  - https://cryptozombies.io/
 
 <h2> Solidity Cheatsheet </h2>
 
@@ -139,9 +145,17 @@ stored on the blockchain
 
 ## Memory VS Storage
 <a name="MemoryvsStorage"/>
+  
+  - In Solidity, there are two locations you can store variables — in storage and in memory.
+  - Storage refers to variables stored permanently on the blockchain. Memory variables are temporary.
 
 ## Arrays
 <a name="Arrays"/>
+
+- Array with a fixed length of 2 elements:
+  - uint[2] fixedArray;
+- A dynamic Array - has no fixed size, can keep growing:
+  - uint[] dynamicArray;
 
 ## Keccak256
 <a name="Keccak256"/>
@@ -152,6 +166,7 @@ Also important, keccak256 expects a single parameter of type bytes. This means t
 
 ```
   keccak256(abi.encodePacked("aaaab"));
+  o/p : 6e91ec6b618bb462a4a6ee5aa2cb0e9cf30f7a052bb467b0ba58b8748c00d2e5
 ```
 
 ## Web3.js
@@ -166,4 +181,14 @@ Also important, keccak256 expects a single parameter of type bytes. This means t
   
   ```
   mapping(address => uint) public myMap;
+  
+  //Example
+  mapping(uint => uint) public uintMap;
+  function set() public{
+    uintMap[0] = 123;
+  }
+  function get() view public returns(uint){
+    uintMap[0];
+  }
+  o/p : 123
   ```
