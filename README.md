@@ -1,7 +1,13 @@
 # 30-Days-of-Solidity
 30 days of Solidity programming challenge is a step-by-step guide to learn Solidity programming language in 30 days.
-
+<h4>-####-Inprogress-####-<h4>
 Practice Solidity with Remix Compiler and CheatSheet 
+
+I learning from these resouces
+
+- Souces:
+  - https://docs.soliditylang.org/
+  - https://cryptozombies.io/
 
 <h2> Solidity Cheatsheet </h2>
 
@@ -17,6 +23,18 @@ Practice Solidity with Remix Compiler and CheatSheet
   - [Functions](#Functions)  
   - [Function Calls/Returns](#FunctionCalls/Returns)  
   - [Function Visibility](#FunctionVisibility)  
+
+- ## Day 3
+  - [Memory vs Storage](#MemoryvsStorage)
+  - [Arrays](#Arrays)
+  
+- ## Day 4
+  - [Keccak256](#Keccak256)
+  - [Web3.js](#Web3.js)  
+  
+- ## Day 5
+  - [Mapping](#Mapping) 
+    
     
 
 
@@ -124,3 +142,53 @@ stored on the blockchain
   - public : Public functions are part of the contract interface and can be either called internally or via message calls.
   - internal : Internal functions can only be accessed from within the current contract or contracts deriving from it.
   - private : Private functions are like internal ones but they are not visible in derived contracts.
+
+## Memory VS Storage
+<a name="MemoryvsStorage"/>
+  
+  - In Solidity, there are two locations you can store variables — in storage and in memory.
+  - Storage refers to variables stored permanently on the blockchain. Memory variables are temporary.
+
+## Arrays
+<a name="Arrays"/>
+
+- Array with a fixed length of 2 elements:
+  - uint[2] fixedArray;
+- A dynamic Array - has no fixed size, can keep growing:
+  - uint[] dynamicArray;
+
+## Keccak256
+<a name="Keccak256"/>
+- Ethereum has the hash function keccak256 built in, which is a version of SHA3. A hash function basically maps an input into a random 256-bit hexadecimal number. A slight change in the input will cause a large change in the hash.
+It's useful for many purposes in Ethereum, but for right now we're just going to use it for pseudo-random number generation.
+Also important, keccak256 expects a single parameter of type bytes. This means that we have to "pack" any parameters before calling keccak256:
+
+
+```
+  keccak256(abi.encodePacked("aaaab"));
+  o/p : 6e91ec6b618bb462a4a6ee5aa2cb0e9cf30f7a052bb467b0ba58b8748c00d2e5
+```
+
+## Web3.js
+<a name="Web3.js"/>
+
+## Mapping
+<a name="Mapping"/>
+- Maps are created with the syntax mapping(keyType => valueType).
+  keyType can be value types such as uint, address or bytes.
+  valueType can be any type including another mapping or an array.
+  Mappings are not iterable.
+  
+  ```
+  mapping(address => uint) public myMap;
+  
+  //Example
+  mapping(uint => uint) public uintMap;
+  function set() public{
+    uintMap[0] = 123;
+  }
+  function get() view public returns(uint){
+    uintMap[0];
+  }
+  o/p : 123
+  ```
