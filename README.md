@@ -34,8 +34,15 @@ I learning from these resouces
   
 - ## Day 5
   - [Mapping](#Mapping) 
+
+- ## Day 6
+  - [Struct](#Struct)
     
-    
+- ## Day 7
+  - [Inheritance](#Inheritance)
+ 
+- ## Day 8
+  - [Interface](#Interface)
 
 
 ## Version
@@ -192,3 +199,19 @@ Also important, keccak256 expects a single parameter of type bytes. This means t
   }
   o/p : 123
   ```
+
+## Struct
+<a name="Struct"/>
+  
+  ```
+    struct user {
+        string name;
+        uint dna;
+    }
+  ```
+
+
+## Inheritance
+<a name="Inheritance"/>
+
+- "internal" is the same as private,"external" is similar to public.
